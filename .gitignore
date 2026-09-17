@@ -24,7 +24,6 @@ _extract_*.txt
 # 截图 / 本地杂项（勿提交）
 /img.png
 /img1.png
-/_scan_cjk.py
 
 # IDE / OS
 .idea/

@@ -35,9 +35,7 @@ Write-Host "    目录: $Root"
 $ico = Join-Path $Root "assets\dblens.ico"
 $png = Join-Path $Root "assets\dblens.png"
 if (-not (Test-Path $ico) -or -not (Test-Path $png)) {
-    Write-Host "==> 生成图标..." -ForegroundColor Yellow
-    python (Join-Path $Root "scripts\gen_icon.py")
-    if ($LASTEXITCODE -ne 0) { throw "图标生成失败" }
+    throw "缺少图标: assets\dblens.ico / assets\dblens.png"
 }
 
 if (-not $SkipBuild) {
