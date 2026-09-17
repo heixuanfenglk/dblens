@@ -1,5 +1,36 @@
-/target
-Cargo.lock
+# Rust
+/target/
+**/*.rs.bk
+
+# 本地配置（可能含密码）
+dblens.toml
 allink.toml
+**/config.toml
+
+# 打包产物
+/dist/
+*.exe
+*.msi
 *.pdb
+
+# 本地数据 / 临时文件
+*.db
+*.sqlite
+*.sqlite3
 *.catalog.json
+_cjk_scan.json
+_extract_*.txt
+
+# 截图 / 本地杂项（勿提交）
+/img.png
+/img1.png
+/_scan_cjk.py
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini
