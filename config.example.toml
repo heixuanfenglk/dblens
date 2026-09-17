@@ -1,0 +1,57 @@
+# DbLens — 万能查看器配置示例
+# 复制为 dblens.toml，或保存到 %APPDATA%/dblens/config.toml
+# 启动时不会预置任何本机连接，请通过「新建连接」向导添加。
+#
+# 示例（取消注释后生效）:
+#
+# [[connections]]
+# name = "prod-mysql"
+# kind = "mysql"          # mysql|mariadb|postgres|mssql|oracle|sqlite|snowflake|clickhouse|mongodb|redis|memcached|elasticsearch|etcd
+# host = "db.example.com"
+# port = 3306
+# username = "app"
+# password = "secret"
+# database = "appdb"
+#
+# [[connections]]
+# name = "prod-oracle"
+# kind = "oracle"
+# host = "db.example.com"
+# port = 1521
+# username = "scott"
+# password = "tiger"
+# database = "ORCL"          # 服务名 / SID
+#
+# [[connections]]
+# name = "cloud-snowflake"
+# kind = "snowflake"
+# host = "xy12345.us-east-1" # Account
+# username = "USER"
+# password = "secret"
+# database = "ANALYTICS"
+# warehouse = "COMPUTE_WH"
+# role = "SYSADMIN"
+#
+# [[connections]]
+# name = "local-clickhouse"
+# kind = "clickhouse"
+# host = "127.0.0.1"
+# port = 8123
+# database = "default"
+#
+# [[connections]]
+# name = "local-mssql"
+# kind = "mssql"
+# host = "DESKTOP-XXX\\SQLEXPRESS"   # 支持 主机\实例名
+# port = 1433                        # 命名实例时可忽略，走 SQL Browser
+# database = "master"
+# auth_mode = "windows"              # sql_server | windows | entra_password | …
+# # username / password 仅 sql_server（及部分 Entra）需要
+#
+# [[connections]]
+# name = "local-sqlite"
+# kind = "sqlite"
+# database = "D:/data/demo.db"
+
+# default = "prod-mysql"
+connections = []

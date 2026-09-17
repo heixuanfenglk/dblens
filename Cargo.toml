@@ -1,0 +1,54 @@
+[package]
+name = "dblens"
+version = "0.1.0"
+edition = "2021"
+description = "DbLens — 万能多主机数据查看器（MySQL / MariaDB / Postgres / MSSQL / Oracle / SQLite / Snowflake / ClickHouse / MongoDB / Redis / ES / …）"
+authors = ["dblens"]
+build = "build.rs"
+
+[dependencies]
+anyhow = "1"
+arrow-array = "57"
+arrow-cast = "57"
+async-trait = "0.1"
+base64 = "0.22"
+dirs = "6"
+eframe = { version = "0.31", default-features = true, features = ["persistence"] }
+egui = "0.31"
+egui_extras = { version = "0.31", features = ["serde"] }
+etcdrs = "0.1"
+futures = "0.3"
+image = { version = "0.25", default-features = false, features = ["png"] }
+mongodb = { version = "3", default-features = false, features = ["rustls-tls", "compat-3-0-0"] }
+oracle-rs = "0.1.7"
+redis = { version = "0.27", features = ["tokio-comp", "connection-manager"] }
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+rfd = "0.15"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+snowflake-api = "0.14"
+sqlx = { version = "0.8", default-features = false, features = [
+    "runtime-tokio",
+    "tls-rustls",
+    "mysql",
+    "postgres",
+    "sqlite",
+    "chrono",
+    "json",
+] }
+thiserror = "2"
+tiberius = { version = "0.12", default-features = false, features = ["chrono", "rustls", "tds73", "winauth", "sql-browser-tokio"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "net", "io-util", "time"] }
+tokio-util = { version = "0.7", features = ["compat"] }
+toml = "0.8"
+url = "2"
+uuid = { version = "1", features = ["v4", "serde"] }
+
+[build-dependencies]
+winres = "0.1"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
+
